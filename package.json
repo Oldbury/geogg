@@ -6,7 +6,8 @@
   "author": "Alistair Oldbury <alistair@oldbury.org>",
   "license": "MIT",
   "scripts": {
-    "start": "concurrently \"cd server && yarn run start\" \"cd geogg && yarn start\""
+    "start": "concurrently \"cd server && yarn run start\" \"cd geogg && yarn start\"",
+    "heroku-postbuild": "cd geogg && yarn && yarn run build"
   },
   "devDependencies": {
     "concurrently": "^6.2.0",
