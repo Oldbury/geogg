@@ -40,7 +40,10 @@ const SearchBar = () => {
                 {searchText.length > 2 ?
                     <ResultList locations={result} />
                     :
-                    null
+                    <div className="text-center py-3" >
+                        <h1>Start typing to search for a location</h1>
+                    </div>
+
                 }
             </div>
 

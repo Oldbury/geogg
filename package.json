@@ -1,0 +1,15 @@
+{
+  "name": "geogg",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Oldbury/geogg.git",
+  "author": "Alistair Oldbury <alistair@oldbury.org>",
+  "license": "MIT",
+  "scripts": {
+    "start": "concurrently \"cd server && yarn run start\" \"cd geogg && yarn start\""
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "nodemon": "^2.0.7"
+  }
+}

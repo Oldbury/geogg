@@ -49,7 +49,7 @@ app.get('/locations?', async (req, res) => {
             async function getSearchRes() {
                 let searchResults = []
 
-                await db.each(`SELECT * FROM locations WHERE name LIKE "%` + req.query.q.toString() + '%" COLLATE NOCASE', (err, row) => {
+                await db.each(`SELECT * FROM locations WHERE name LIKE "` + req.query.q.toString() + '%" COLLATE NOCASE', (err, row) => {
                     if (err) {
                         console.error(err.message)
                     }
@@ -60,7 +60,11 @@ app.get('/locations?', async (req, res) => {
 
 
                 }, function(err, rows) {
+                    if (err) {
+                        console.error(err)
+                    }
                     // console.log(searchResults)
+                    searchResults.sort((a, b) => a.length - b.length)
                     res.send(searchResults)
                     return searchResults
 
