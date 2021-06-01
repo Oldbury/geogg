@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search result card renders 1`] = `
+<div
+  className="bg-white border-b px-3 py-2  text-black"
+>
+  <h1>
+    Test
+  </h1>
+</div>
+`;

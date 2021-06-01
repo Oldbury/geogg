@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Navbar from './components/Navbar';
+import SearchBar from './components/SearchBar';
+import axios from 'axios'
 
-function App() {
+const App = () => {
+
+  const [result, setResult] = useState('')
+
+  const getLocations = async () => {
+    const res = await axios.get('http://localhost:3001/')
+
+    console.log('res,', res)
+    setResult(res.data)
+
+  }
+
   return (
     <div className="">
-      <h1>
-        Hello world
-      </h1>
+      <Navbar />
+      <div className="w-full px-3 py-10" >
+        <SearchBar />
+      </div>
+    
+     
     </div>
   );
 }
