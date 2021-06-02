@@ -12,7 +12,7 @@ const SearchBar = () => {
         // input length validation handled server side
         if (searchText.length > 2) {
             try {
-                const res = await axios.get('http://localhost:3001/locations?q=' + searchText)
+                const res = await axios.get('/locations?q=' + searchText)
                 if (res.data === "not searching, enter more characters to search") {
                     console.log(res.data)
                 }

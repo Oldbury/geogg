@@ -3,7 +3,7 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const port = 3001
+const port = process.env.PORT || 3001
 
 // const {database} = require('./db')
 // interface LocationResult {
@@ -109,5 +109,5 @@ app.get('/locations?', async (req, res) => {
 
 
 app.listen(port, () => {
-    console.log(`server running at http://localhost:${port}`)
+    console.log(`server running at port ${port}`)
 })
