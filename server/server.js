@@ -5,13 +5,6 @@ const app = express()
 const cors = require('cors')
 const port = process.env.PORT || 3001
 
-// const {database} = require('./db')
-// interface LocationResult {
-//     locations: [{
-//         Name: string
-//     }]
-
-// }
 
 const sqlite3 = require('sqlite3').verbose()
 
@@ -24,10 +17,6 @@ if(process.env.NODE_ENV === 'production') {
       res.sendFile(path.join(__dirname, '/geogg/build', 'index.html'))
     })
   }
-
-app.get('/', (req, res) => {
-    res.send('Hello world')
-})
 
 app.get('/locations?', async (req, res) => {
     try {

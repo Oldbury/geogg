@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "concurrently \"cd server && yarn start\" \"cd geogg && yarn && yarn start\"",
-    "heroku-postbuild": "npm i && cd server && yarn install && cd ../geogg && yarn && yarn build"
+    "heroku-postbuild": "yarn  && cd server && yarn install && cd ../geogg && yarn && yarn build"
   },
   "dependencies": {
     "concurrently": "^6.2.0"
