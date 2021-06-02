@@ -5,16 +5,6 @@ import axios from 'axios'
 
 const App = () => {
 
-  const [result, setResult] = useState('')
-
-  const getLocations = async () => {
-    const res = await axios.get('http://localhost:3001/')
-
-    console.log('res,', res)
-    setResult(res.data)
-
-  }
-
   return (
     <div className="">
       <Navbar />
