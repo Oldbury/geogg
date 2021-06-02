@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import SearchBar from './components/SearchBar';
-import axios from 'axios'
+// import axios from 'axios'
 
 const App = () => {
 
