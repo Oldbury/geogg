@@ -4,6 +4,9 @@
   "private": true,
   "description": "nodejs server",
   "main": "index.ts",
+  "engines": {
+    "node": "15.14.0"
+  },
   "author": "oldbury",
   "license": "MIT",
   "scripts": {

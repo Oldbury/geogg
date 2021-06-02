@@ -3,20 +3,14 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const port = process.env.PORT || 3001
-
+const port = process.env.PORT || 8000
+const path = require("path")
 
 const sqlite3 = require('sqlite3').verbose()
 
 
 app.use(cors())
 
-if(process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '/geogg/build')))
-    app.get('*', (req,res) => {
-      res.sendFile(path.join(__dirname, '/geogg/build', 'index.html'))
-    })
-  }
 
 app.get('/locations?', async (req, res) => {
     try {
@@ -94,6 +88,12 @@ app.get('/locations?', async (req, res) => {
 
 })
 
+if(process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '/geogg/build')))
+    app.get('*', (req,res) => {
+      res.sendFile(path.join(__dirname, '/geogg/build', 'index.html'))
+    })
+  }
 
 app.listen(port, () => {
     console.log(`server running at port ${port}`)
