@@ -89,9 +89,9 @@ app.get('/locations?', async (req, res) => {
 })
 
 if(process.env.NODE_ENV === 'production') {
-    // app.use(express.static(path.join(__dirname, '/geogg/build')))
+    app.use(express.static(path.join(__dirname, '../geogg', 'build')))
     app.get('*', (req,res) => {
-      res.sendFile(path.join(__dirname, '/geogg/build', 'index.html'))
+      res.sendFile(path.join(__dirname, '../geogg/build', 'index.html'))
     })
   }
 
