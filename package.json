@@ -9,6 +9,9 @@
     "start": "concurrently \"cd server && yarn start\" \"cd geogg && yarn && yarn start\"",
     "heroku-postbuild": "cd geogg && yarn && yarn build"
   },
+  "dependencies": {
+    "concurrently": "^6.2.0"
+  },
   "devDependencies": {
     "concurrently": "^6.2.0",
     "nodemon": "^2.0.7"
