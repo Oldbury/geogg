@@ -18,14 +18,12 @@ const sqlite3 = require('sqlite3').verbose()
 
 app.use(cors())
 
-// const db = new sqlite3.Database('./db/geogg.sqlite3', sqlite3.OPEN_READWRITE, (err) => {
-//     if (err) { return console.error(err.message) }
-
-//     console.log('Connected to database')
-//     console.log('db', db.tables)
-// })
-
-// const database = require('./db/database')
+if(process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '/geogg/build')))
+    app.get('*', (req,res) => {
+      res.sendFile(path.join(__dirname, '/client/build', 'index.html'))
+    })
+  }
 
 app.get('/', (req, res) => {
     res.send('Hello world')
