@@ -27,3 +27,17 @@ https://user-images.githubusercontent.com/10517525/120548755-9e44ba80-c3ea-11eb-
 - There is a route defined '/locations?q=query'
 - When performing a get request it querys the database for the names of any locations that contain the search term
 - The results are sorted server side and returned shortest name first as theoretically this would be the closest name match
+
+
+# Questions
+
+1. Explain the output of the following code and why 
+```
+setTimeout(function() {
+	console.log("1");
+}, 100);  
+
+console.log("2");
+```
+
+`setTimeout` is a self invoking function, this means it is called without being manually invoked
